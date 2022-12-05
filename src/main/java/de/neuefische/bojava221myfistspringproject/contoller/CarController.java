@@ -11,7 +11,11 @@ import java.util.List;
 @RequestMapping("/car")
 public class CarController {
 
-    private final static CarService service = new CarService();
+    private final CarService service;
+
+    public CarController(CarService service) {
+        this.service = service;
+    }
 
     @PostMapping
     public Car addCar(@RequestBody Car car){
